@@ -19,6 +19,10 @@
 .btn-cuenta .label {
     -fx-text-fill: white;
 }
+/* Este selector busca el ImageView que está dentro de tu botón de cuenta */
+.btn-cuenta .image-view {
+    -fx-effect: dropshadow(three-pass-box, white, 0, 100, 0, 0);
+}
 
 /* Estilos de Menú Desplegable */
 .context-menu {
@@ -36,6 +40,21 @@
 .menu-section-header {
     -fx-text-fill: #8b949e;
     -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+/* 1. Quitar el fondo azul cuando pasas el mouse o se enfoca un ítem deshabilitado */
+.menu-item:disabled:focused,
+.menu-item:disabled:hover,
+.custom-menu-item:disabled:focused,
+.custom-menu-item:disabled:hover {
+    -fx-background-color: transparent;
+}
+
+/* 2. Asegurar que el texto mantenga un color gris de título de sección y no se opaque de más */
+.menu-section-header {
+    -fx-text-fill: #858c94; /* Color gris de sección */
+    -fx-font-size: 11px;
     -fx-font-weight: bold;
 }
 
@@ -97,4 +116,75 @@
     -fx-background-insets: 0;
     -fx-padding: 0;
     -fx-background-color: transparent;
+}
+
+/* Cargamos el muñequito de forma segura desde el CSS */
+.icono-usuario {
+    -fx-image: url("../img/user_icon.png");
+}
+
+.combo-operacion {
+    -fx-background-color: #1e222b;
+    -fx-background-radius: 6;
+    -fx-border-color: #316cf4;
+    -fx-border-radius: 6;
+    -fx-text-fill: white;
+    -fx-padding: 4 8 4 8;
+}
+
+.combo-operacion .label {
+    -fx-text-fill: white; /* Color del texto seleccionado */
+}
+
+.combo-operacion .list-cell {
+    -fx-background-color: #1e222b;
+    -fx-text-fill: white;
+}
+
+.combo-operacion .list-cell:hover {
+    -fx-background-color: #316cf4;
+}
+
+/* Contenedor principal de la alerta */
+.mi-alerta-personalizada {
+    -fx-background-color: #1a1e24; /* Fondo obscuro igual a tu panel */
+    -fx-border-color: #316cf4;    /* Borde azul de BioMath 3D */
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* Texto del encabezado (Título del error) */
+.mi-alerta-personalizada:header .header-panel {
+    -fx-background-color: #1a1e24;
+}
+.mi-alerta-personalizada:header .header-panel .label {
+    -fx-text-fill: #ff4a4a; /* Texto rojo para indicar advertencia */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Contenido del mensaje (Explicación del error) */
+.mi-alerta-personalizada .content {
+    -fx-background-color: #1a1e24;
+    -fx-text-fill: #e2e8f0; /* Letras blancas/gris claro */
+    -fx-font-size: 12px;
+}
+
+/* Panel inferior donde vive el botón de Aceptar */
+.mi-alerta-personalizada .button-bar {
+    -fx-background-color: #13161c; /* Un tono un poco más obscuro para la base */
+}
+
+/* El botón de Aceptar / Ok */
+.mi-alerta-personalizada .button {
+    -fx-background-color: #316cf4; /* Fondo azul rey */
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.mi-alerta-personalizada .button:hover {
+    -fx-background-color: #437eff; /* Brillo al pasar el cursor */
 }
