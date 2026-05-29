@@ -1,0 +1,100 @@
+/* Variables de paleta global */
+.main-root {
+    -fx-background-color: #1a1d23;
+}
+
+/* Header */
+.logo-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.btn-cuenta {
+    -fx-background-color: #316cf4;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+}
+.btn-cuenta .label {
+    -fx-text-fill: white;
+}
+
+/* Estilos de Menú Desplegable */
+.context-menu {
+    -fx-background-color: #252932;
+    -fx-border-color: #343a46;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+.menu-item .label {
+    -fx-text-fill: #e6edf3;
+}
+.menu-item:focused {
+    -fx-background-color: #316cf4;
+}
+.menu-section-header {
+    -fx-text-fill: #8b949e;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+/* Panel Lateral */
+.side-wrapper {
+    -fx-padding: 0 0 15 15;
+}
+.side-panel {
+    -fx-background-color: #252932;
+    -fx-background-radius: 15;
+}
+.panel-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.input-field {
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.domain-badge {
+    -fx-background-color: #343a46;
+    -fx-text-fill: #adb5bd;
+    -fx-padding: 8;
+    -fx-background-radius: 8;
+}
+.btn-render {
+    -fx-background-color: #316cf4;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+/* Centro */
+.center-container {
+    -fx-background-color: #1a1d23;
+}
+.placeholder-text {
+    -fx-text-fill: #4e5563;
+    -fx-font-size: 14px;
+}
+
+/* Panel Inferior */
+.bottom-panel {
+    -fx-padding: 0 15 15 15;
+}
+.card-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 15;
+}
+.card-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1d23;
+}
+.history-list {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}

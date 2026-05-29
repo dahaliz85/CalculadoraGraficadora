@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="main-root" stylesheets="@window_css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biomath3d.ui.MainController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" padding="${new Insets(15, 25, 15, 25)}" styleClass="header">
+            <children>
+                <Label styleClass="logo-title" text="BioMath 3D" />
+                <Region HBox.hgrow="ALWAYS" />
+                <MenuButton fx:id="menuCuenta" styleClass="btn-cuenta" text="Cuenta">
+                    <items>
+                        <CustomMenuItem hideOnClick="false">
+                            <content><Label styleClass="menu-section-header" text="CUENTA" /></content>
+                        </CustomMenuItem>
+                        <MenuItem text="Ver Perfil" />
+                        <MenuItem text="Configuración" />
+                        <SeparatorMenuItem />
+                        <CustomMenuItem hideOnClick="false">
+                            <content><Label styleClass="menu-section-header" text="PROYECTO" /></content>
+                        </CustomMenuItem>
+                        <MenuItem text="Nuevo Proyecto" />
+                        <MenuItem text="Guardar" />
+                        <MenuItem text="Exportar Malla" />
+                        <SeparatorMenuItem />
+                        <CustomMenuItem hideOnClick="false">
+                            <content><Label styleClass="menu-section-header" text="SISTEMA" /></content>
+                        </CustomMenuItem>
+                        <MenuItem fx:id="menuSalir" text="Salir" />
+                    </items>
+                </MenuButton>
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <StackPane styleClass="side-wrapper">
+            <children>
+                <VBox prefWidth="280.0" spacing="15.0" styleClass="side-panel">
+                    <children>
+                        <Label styleClass="panel-label" text="Function Input" />
+                        <TextField fx:id="txtFunc" text="z = sin(x)*cos(y)" styleClass="input-field" />
+                        <Label maxWidth="1.7976931348623157E308" styleClass="domain-badge" text="(x, y) = [-5, 5] × [-5, 5]" />
+                        <Region VBox.vgrow="ALWAYS" />
+                        <Button fx:id="btnRender" maxWidth="1.7976931348623157E308" prefHeight="40.0" styleClass="btn-render" text="Render 3D" />
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </StackPane>
+    </left>
+
+    <center>
+        <StackPane fx:id="centerContainer" styleClass="center-container">
+            <children>
+                <Label styleClass="placeholder-text" text="[ Área reservada para gráficos de Superficie 3D ]" />
+            </children>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox prefHeight="220.0" spacing="15.0" styleClass="bottom-panel">
+            <children>
+                <VBox spacing="10.0" styleClass="card-panel" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label styleClass="card-title" text="Analysis Results" />
+                        <Separator />
+                    </children>
+                </VBox>
+                <VBox prefWidth="350.0" spacing="10.0" styleClass="card-panel">
+                    <children>
+                        <Label styleClass="card-title" text="History" />
+                        <Separator />
+                        <ListView fx:id="historyList" VBox.vgrow="ALWAYS" styleClass="history-list" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
