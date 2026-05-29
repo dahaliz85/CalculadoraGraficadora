@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Apunta correctamente a la carpeta ui exclusiva de resources
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/biomath3d/ui/MainView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com.biomath3d.ui.view/MainView.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 1200, 800);
@@ -21,7 +21,7 @@ public class Main extends Application {
 
         // Carga el icono desde la ubicación exclusiva de resources
         try {
-            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/biomath3d/ui/logo.png")));
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/biomath3d/ui/img/logo.png")));
         } catch (Exception e) {
             System.out.println("Nota: Icono no encontrado.");
         }
