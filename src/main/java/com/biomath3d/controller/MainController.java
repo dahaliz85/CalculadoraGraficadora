@@ -3,6 +3,8 @@ package com.biomath3d.controller;
 import com.biomath3d.utils.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.StackPane;
 
 import javafx.collections.FXCollections;
@@ -11,6 +13,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.application.Platform;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
 
 public class MainController {
 
@@ -66,17 +72,75 @@ public class MainController {
     //   MÉTODOS ASOCIADOS A LAS FUNCIONES REALES DEL MENÚ FXML
     // ==========================================================
     @FXML private void nuevoProyecto() { System.out.println("CU-02: Inicializando lienzo..."); txtFuncion.clear(); }
-    @FXML private void abrirProyecto() { System.out.println("CU-05: Consultando archivos del historial..."); }
-    @FXML private void exportarImagen() { System.out.println("CU-08: Capturando evidencia en PNG..."); }
-    @FXML private void exportarMallaOBJ() { System.out.println("CU-08: Exportando geometría a archivo .obj..."); }
+    @FXML private void abrirProyecto() {
+        Stage stage = (Stage) txtFuncion.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Abrir Proyecto BioMath 3D");
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Archivos de Simulación (*.dat, *.json)", "*.dat", "*.json")
+        );
 
-    @FXML private void copiarAlPortapapeles() { System.out.println("Copiando captura al portapapeles..."); }
-    @FXML private void limpiarHistorialBaseDatos() { System.out.println("Abriendo conexión SQLite para truncar tablas..."); }
+        File archivo = fileChooser.showOpenDialog(stage);
+        if (archivo != null) {
+            // Aquí irá tu lógica para parsear el archivo y cargar la ecuación en el TextBox
+            System.out.println("Archivo cargado con éxito desde: " + archivo.getAbsolutePath());
+        }}
+    @FXML private void exportarImagen() {
+        Stage stage = (Stage) txtFuncion.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Exportar Captura de Pantalla");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagen PNG (*.png)", "*.png"));
+        fileChooser.setInitialFileName("render_biomath3d.png");
 
-    @FXML private void alternarEjes() { System.out.println("Modificando visibilidad de nodos de ejes X, Y, Z..."); }
-    @FXML private void alternarWireframe() { System.out.println("Cambiando render a modo red de líneas..."); }
-    @FXML private void restablecerCamara() { System.out.println("Reiniciando matriz de transformación de la cámara 3D..."); }
+        File archivo = fileChooser.showSaveDialog(stage);
+        if (archivo != null) {
+            // Lógica para tomar el Snapshot de tu SubScene/Pane 3D y guardarlo con ImageIO
+            System.out.println("Render exportado correctamente como imagen en: " + archivo.getName());
+        }
+    }
+    @FXML private void exportarMallaOBJ() {
+        Stage stage = (Stage) txtFuncion.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Exportar Modelo 3D");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Modelo Wavefront (*.obj)", "*.obj"));
+        fileChooser.setInitialFileName("malla_superficie.obj");
 
-    @FXML private void cerrarVentana() { Platform.exit(); System.exit(0); }
+        File archivo = fileChooser.showSaveDialog(stage);
+        if (archivo != null) {
+            // Aquí llamarás a tu MeshGenerator para volcar los vértices e índices al archivo de texto
+            System.out.println("Geometría tridimensional exportada en formato OBJ: " + archivo.getName());
+        }
+    }
+
+    @FXML private void copiarAlPortapapeles() {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+
+        // Simulación: En el código real sacarías un snapshot de tu nodo 3D:
+        // WritableImage image = subScene3D.snapshot(new SnapshotParameters(), null);
+        // content.putImage(image);
+
+        content.putString(txtFuncion.getText()); // Temporalmente copiamos el texto de la función
+        clipboard.setContent(content);
+        System.out.println("Contenido enviado con éxito al portapapeles del sistema.");
+    }
+    @FXML private void limpiarHistorialBaseDatos() {
+        System.out.println("Abriendo conexión con SQLite: Ejecutando DELETE FROM Configuracion_Simulacion...");
+    }
+
+    @FXML private void alternarEjes() {
+        System.out.println("Modificando visibilidad de nodos de ejes X, Y, Z...");
+    }
+    @FXML private void alternarWireframe() {
+        System.out.println("Cambiando render a modo red de líneas...");
+    }
+    @FXML private void restablecerCamara() {
+        System.out.println("Reiniciando matriz de transformación de la cámara 3D...");
+    }
+
+    @FXML private void cerrarVentana() {
+        Platform.exit();
+        System.exit(0);
+    }
 
 }

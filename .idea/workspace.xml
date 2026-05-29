@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="reinicio de codigo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/img/user_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/img/user_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/styles/window.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/styles/window.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +168,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780028701199</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="reinicio de codigo">
+      <option name="closed" value="true" />
+      <created>1780034814974</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780034814975</updated>
+    </task>
+    <task id="LOCAL-00008" summary="reinicio de codigo">
+      <option name="closed" value="true" />
+      <created>1780035004633</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780035004633</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

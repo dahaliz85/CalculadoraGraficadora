@@ -66,7 +66,7 @@ public class Utils {
             dialogPane.getStyleClass().add("mi-alerta-personalizada");
 
             // CORREGIDO: Apuntamos de forma directa a la raíz de resources usando el ClassLoader global
-            java.net.URL cssURL = Utils.class.getClassLoader().getResource("com/biomath3d/ui/styles/window.css");
+            java.net.URL cssURL = Thread.currentThread().getContextClassLoader().getResource("com/biomath3d/ui/styles/window.css");
 
             if (cssURL != null) {
                 dialogPane.getStylesheets().add(cssURL.toExternalForm());
