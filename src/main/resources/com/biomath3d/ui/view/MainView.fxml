@@ -4,14 +4,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="main-root" stylesheets="@../styles/window.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biomath3d.controller.MainController">
 
     <top>
-        <HBox alignment="CENTER_LEFT" padding="${new Insets(15, 25, 15, 25)}" styleClass="header">
+        <HBox alignment="CENTER_LEFT" styleClass="header">
+            <padding>
+                <Insets top="15.0" right="25.0" bottom="15.0" left="25.0" />
+            </padding>
             <children>
                 <Label styleClass="logo-title" text="BioMath 3D" />
                 <Region HBox.hgrow="ALWAYS" />
-                <MenuButton fx:id="menuCuenta" styleClass="btn-cuenta" text="Cuenta">
+                <MenuButton fx:id="menuCuenta" styleClass="btn-cuenta">
+                    <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true" >
+                            <image>
+                                <Image url = "/com/biomath3d/ui/img/user_icon.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
                     <items>
                         <CustomMenuItem hideOnClick="false">
                             <content><Label styleClass="menu-section-header" text="CUENTA" /></content>
@@ -19,17 +31,6 @@
                         <MenuItem text="Ver Perfil" />
                         <MenuItem text="Configuración" />
                         <SeparatorMenuItem />
-                        <CustomMenuItem hideOnClick="false">
-                            <content><Label styleClass="menu-section-header" text="PROYECTO" /></content>
-                        </CustomMenuItem>
-                        <MenuItem text="Nuevo Proyecto" />
-                        <MenuItem text="Guardar" />
-                        <MenuItem text="Exportar Malla" />
-                        <SeparatorMenuItem />
-                        <CustomMenuItem hideOnClick="false">
-                            <content><Label styleClass="menu-section-header" text="SISTEMA" /></content>
-                        </CustomMenuItem>
-                        <MenuItem fx:id="menuSalir" text="Salir" />
                     </items>
                 </MenuButton>
             </children>

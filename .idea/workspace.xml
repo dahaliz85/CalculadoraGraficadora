@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="reinicio de codigo">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/img/user_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com.biomath3d.ui/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com.biomath3d.ui/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com.biomath3d.ui/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com.biomath3d.ui/window_css.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/styles/window.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780026406304</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="reinicio de codigo">
+      <option name="closed" value="true" />
+      <created>1780026969480</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780026969480</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
