@@ -1,0 +1,6 @@
+f560b16b-da8a-4408-b33a-499f49b84049|Calcular Gradiente ∇f Anonimo|z = sin(x)*cos(y)|-5.0000|5.0000|-5.0000|5.0000|1.0000|2026-06-04 23:02:04
+0de9ac76-6ce3-4bba-9403-8e180f63db38|Calcular Divergencia (Campos) Anonimo|z = sin(x)*cos(y)|-5.0000|5.0000|-5.0000|5.0000|1.0000|2026-06-04 23:07:00
+51d6552b-e6a0-48e8-a5b8-19b3648aafcb|Generar Malla Superficie 3D Anonimo|z = sin(x)*cos(y)|-5.0000|5.0000|-5.0000|5.0000|1.0000|2026-06-04 23:11:55
+454c4fdd-4cd1-4b17-a69c-110c27ab0f50|Generar Malla Superficie 3D Anonimo|z = sin(x)*cos(y)|-5.0000|5.0000|-5.0000|5.0000|1.0000|2026-06-04 23:18:39
+1a2114e8-86ca-42a2-b8de-288c9ca30d9e|Calcular Divergencia (Campos) Anonimo|z = sin(x)*cos(y)|-5.0000|5.0000|-5.0000|5.0000|1.0000|2026-06-04 23:22:34
+c753bc7c-d8c9-4db2-9dd3-86356361f52a|Generar Malla Superficie 3D Anonimo|z = sin(x)*cos(y)|-5.0000|5.0000|-5.0000|5.0000|1.0000|2026-06-04 23:24:28

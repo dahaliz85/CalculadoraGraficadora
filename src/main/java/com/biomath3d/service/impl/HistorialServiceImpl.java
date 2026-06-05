@@ -128,4 +128,22 @@ public class HistorialServiceImpl implements IHistorialService {
 
         return repoFile.escribirScriptSQL(destinoArchivo, sqlScript.toString());
     }
+
+    @Override
+    public boolean exportarHistorialTextoPlano(File destinoArchivo) {
+        // 1. Recuperamos las líneas del archivo de trabajo local usando tu método real
+        List<String> lineas = repoFile.leerTodasLasLineas();
+
+        // 2. Escribimos directamente en el archivo de destino elegido por el usuario
+        try (java.io.BufferedWriter writer = new java.io.BufferedWriter(new java.io.FileWriter(destinoArchivo))) {
+            for (String linea : lineas) {
+                writer.write(linea);
+                writer.newLine(); // Mantiene el salto de línea para cada registro
+            }
+            return true; // Si terminó de escribir con éxito
+        } catch (java.io.IOException e) {
+            System.out.println("Error al exportar el historial a texto plano: " + e.getMessage());
+            return false; // Si ocurrió algún problema con los permisos o la ruta
+        }
+    }
 }

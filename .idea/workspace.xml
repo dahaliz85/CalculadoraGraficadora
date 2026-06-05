@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="implementacion de funcion de historial y alertas">
+      <change afterPath="$PROJECT_DIR$/historial_simulaciones.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/IntroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/img/Intro_BioMath3D.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/IntroView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/HistorialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/HistorialController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/IHistorialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/IHistorialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/impl/HistorialServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/impl/HistorialServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -70,8 +80,8 @@
       <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com\biomath3d\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com\biomath3d\ui\styles" />
       <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com\biomath3d\ui\img" />
+      <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com\biomath3d\ui\styles" />
       <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com\biomath3d\ui\view" />
       <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com.biomath3d.ui" />
     </key>
@@ -223,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780634197552</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="implementacion de funcion de historial y alertas">
+      <option name="closed" value="true" />
+      <created>1780635112504</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1780635112505</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -33,4 +33,6 @@ public interface IHistorialService {
      * y delega la escritura física del script .sql.
      */
     boolean exportarDumpSQL(File destinoArchivo);
+
+    boolean exportarHistorialTextoPlano(File destinoArchivo);
 }

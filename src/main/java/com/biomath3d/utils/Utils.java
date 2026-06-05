@@ -15,23 +15,21 @@ public class Utils {
         if (expresion == null || expresion.trim().isEmpty()) {
             return false;
         }
-
-        // Limpiamos espacios y pasamos a minúsculas para estandarizar
         String exprLimpia = expresion.trim().toLowerCase();
 
-        // 1. Validar que no contenga texto común o palabras prohibidas (como "hola")
+        // 1. Validar que no contenga texto común o palabras prohibidas
         // Permitimos nombres de funciones matemáticas estándar: sin, cos, tan, log, exp, sqrt, pi
-        // Si contiene letras que no sean 'x', 'y' o parte de las funciones permitidas, se rechaza.
+        // Agregamos en el segundo replaceAll las letras 'y', 'z' y el operador '=' para soportar "z ="
         String verificacion = exprLimpia
                 .replaceAll("sin|cos|tan|log|exp|sqrt|pi", "")
-                .replaceAll("[0-9x\\+\\-\\*/\\^\\(\\)\\.\\s]", ""); // Quita números, variables y operadores
+                .replaceAll("[0-9xyz\\+=\\-\\*/\\^\\(\\)\\.\\s]", ""); // <-- Agregadas 'y', 'z' y '='
 
-        // Si después de quitar lo permitido aún quedan letras (como h, o, l, a), la función no es válida
+        // Si después de quitar lo permitido aún quedan letras extrañas, la función no es válida
         if (!verificacion.isEmpty()) {
             return false;
         }
 
-        // 2. Validación de Balanceo de Paréntesis (Requerimiento estricto CP-ERR-01)
+        // 2. Validación de Balanceo de Paréntesis
         int parentesis = 0;
         for (int i = 0; i < exprLimpia.length(); i++) {
             char caracter = exprLimpia.charAt(i);
@@ -40,13 +38,11 @@ public class Utils {
             } else if (caracter == ')') {
                 parentesis--;
             }
-            // Si en algún momento hay un paréntesis de cierre sin uno de apertura
             if (parentesis < 0) {
                 return false;
             }
         }
 
-        // Si al final los paréntesis no abrieron y cerraron en pares exactos
         return parentesis == 0;
     }
 

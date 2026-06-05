@@ -35,8 +35,12 @@
                             <content><Label styleClass="menu-section-header" text="EDITAR" /></content>
                         </CustomMenuItem>
                         <MenuItem text="Copiar Imagen al Portapapeles" onAction="#copiarAlPortapapeles" />
-                        <MenuItem text="Exportar Historial" onAction="#limpiarHistorialBaseDatos" />
-
+                        <Menu fx:id="menuExportar"  text="Exportar">
+                            <items>
+                                <MenuItem fx:id="menuExportarTxt" text="TXT" onAction="#handleExportarTXT" />
+                                <MenuItem fx:id="menuExportarSql" text="SQL" onAction="#handleExportarSQL" />
+                            </items>
+                        </Menu>
 
                         <SeparatorMenuItem />
 
@@ -68,7 +72,9 @@
                         <TextField fx:id="txtFuncion" text="z = sin(x)*cos(y)" styleClass="input-field" />
                         <HBox spacing="10.0" alignment="CENTER_LEFT" style="-fx-padding: 10;">
                             <ComboBox fx:id="comboOperacion" promptText="Seleccionar operación" styleClass="combo-operacion" />
-                            <Button fx:id="btnEjecutar" text="Ejecutar" onAction="#procesarOperacion" />
+                        </HBox>
+                        <HBox spacing="10.0" alignment="CENTER_LEFT" style="-fx-padding: 10; width: 100%;">
+                            <Button style="width: 100%;" fx:id="btnEjecutar" text="Ejecutar" onAction="#procesarOperacion" />
                         </HBox>
                         <Label maxWidth="1.7976931348623157E308" styleClass="domain-badge" text="(x, y) = [-5, 5] × [-5, 5]" />
                         <Region VBox.vgrow="ALWAYS" />

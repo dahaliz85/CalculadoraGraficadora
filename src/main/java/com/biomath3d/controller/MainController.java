@@ -161,4 +161,81 @@ public class MainController {
         System.exit(0);
     }
 
+    /**
+     * Acción asignada a la subopción "txt".
+     * Abre un FileChooser para que el usuario elija dónde guardar una copia del historial en texto plano.
+     */
+    @FXML
+    private void handleExportarTXT() {
+        // 1. Validar primero si hay elementos en el ListView antes de abrir ventanas
+        if (historyList.getItems().isEmpty()) {
+            Utils.mostrarAlertaError("Exportación Cancelada", Constants.ERROR_LINE_NOT_READ);
+            return;
+        }
+
+        Stage stageActual = (Stage) txtFuncion.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+
+        // 2. Configurar el título del diálogo y el nombre sugerido
+        fileChooser.setTitle("Exportar Historial Texto Plano");
+        fileChooser.setInitialFileName(Constants.HISTORIAL_ARCHIVO_NOMBRE + Constants.HISTORIAL_ARCHIVO_EXT_TXT);
+
+        // 3. Forzar el filtro para que guarde estrictamente como archivo .txt
+        FileChooser.ExtensionFilter filtroTxt = new FileChooser.ExtensionFilter("Text Files (*.txt)", "*" + Constants.HISTORIAL_ARCHIVO_EXT_TXT);
+        fileChooser.getExtensionFilters().add(filtroTxt);
+
+        // 4. Abrir la ventana nativa de "Guardar como..."
+        File archivoDestino = fileChooser.showSaveDialog(stageActual);
+
+        if (archivoDestino != null) {
+            // Reutilizamos el repositorio a través del HistorialController.
+            // Para mantener la consistencia, le pedimos al servicio que lea las líneas actuales
+            // y escriba la copia exacta en la ubicación elegida por el usuario.
+            boolean exito = historialController.exportarHistorialTextoPlano(archivoDestino);
+
+            if (exito) {
+                Utils.mostrarAlertaError("Operación Exitosa", "El historial se ha exportado correctamente en formato de texto plano.");
+            } else {
+                Utils.mostrarAlertaError("Error de Escritura", Constants.ERROR_FILE_NOT_WRITTEN);
+            }
+        }
+    }
+
+    /**
+     * Acción asignada a la subopción "sql".
+     * Abre el FileChooser nativo y genera el Dump SQL relacional completo.
+     */
+    @FXML
+    private void handleExportarSQL() {
+        // Validamos si hay elementos en el ListView antes de intentar exportar algo vacío
+        if (historyList.getItems().isEmpty()) {
+            Utils.mostrarAlertaError("Exportación Cancelada", Constants.ERROR_LINE_NOT_READ);
+            return;
+        }
+
+        Stage stageActual = (Stage) txtFuncion.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+
+        // Configuración del diálogo usando tus constantes centralizadas
+        fileChooser.setTitle("Guardar Script SQL");
+        fileChooser.setInitialFileName(Constants.HISTORIAL_ARCHIVO_NOMBRE + Constants.HISTORIAL_ARCHIVO_EXT_SQL);
+
+        // Filtro estricto para obligar la extensión .sql
+        FileChooser.ExtensionFilter filtroSql = new FileChooser.ExtensionFilter("SQL Files (*.sql)", "*" + Constants.HISTORIAL_ARCHIVO_EXT_SQL);
+        fileChooser.getExtensionFilters().add(filtroSql);
+
+        File archivoDestino = fileChooser.showSaveDialog(stageActual);
+
+        if (archivoDestino != null) {
+            // El servicio se encarga de masticar el archivo plano y escupir el script DDL/DML relacional
+            boolean exito = historialController.exportarDumpSQL(archivoDestino);
+            if (exito) {
+                // Mensaje de éxito usando tu infraestructura
+                Utils.mostrarAlertaError("Operación Exitosa", "El historial se ha exportado correctamente a un archivo SQL relacional.");
+            } else {
+                Utils.mostrarAlertaError("Error de Escritura", Constants.ERROR_FILE_NOT_WRITTEN);
+            }
+        }
+    }
+
 }

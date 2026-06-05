@@ -17,7 +17,7 @@ public class HistorialController {
     private final IHistorialService historialService;
 
     @FXML
-    private TextArea txtHistoryArea; // El cuadro blanco visual "History" de la UI
+    private TextArea txtHistoryArea;
 
     public HistorialController() {
         this.historialService = new HistorialServiceImpl();
@@ -28,22 +28,23 @@ public class HistorialController {
      * que la registre de forma persistente en el archivo local.
      */
     public void registrarFuncionEnHistorial(String operacionSeleccionada, String ecuacion) {
-        // 1. Darle formato visual para agregarlo al cuadro blanco "History"
-        txtHistoryArea.appendText(ecuacion + "\n");
-
-        // 2. Simular los valores técnicos requeridos por el servicio por ahora
         String nombreSimulacion = operacionSeleccionada + " Anonimo";
         double xMin = -5.0, xMax = 5.0, yMin = -5.0, yMax = 5.0, constanteA = 1.0;
 
-        // 3. Delegar el guardado físico a la capa de negocio (Service)
         boolean guardadoExitoso = historialService.guardarNuevaSimulacion(
                 nombreSimulacion, ecuacion, xMin, xMax, yMin, yMax, constanteA
         );
 
-        if (guardadoExitoso) {
-            AlertaUtils.mostrarAlerta(Alert.AlertType.INFORMATION, "Registro Exitoso", Constants.MSG_EXITO_HISTORIAL);
-        } else {
+        if (!guardadoExitoso) {
             AlertaUtils.mostrarAlerta(Alert.AlertType.ERROR, "Error de Almacenamiento", Constants.ERROR_LINE_NOT_RECORDED);
         }
+    }
+
+    public boolean exportarDumpSQL(java.io.File destinoArchivo) {
+        return this.historialService.exportarDumpSQL(destinoArchivo);
+    }
+
+    public boolean exportarHistorialTextoPlano(java.io.File destinoArchivo) {
+        return this.historialService.exportarHistorialTextoPlano(destinoArchivo);
     }
 }

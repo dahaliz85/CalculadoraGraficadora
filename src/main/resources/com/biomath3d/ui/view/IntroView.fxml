@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="15.0" prefWidth="550.0" prefHeight="420.0"
+      style="-fx-background-color: #151922; -fx-padding: 20;"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.biomath3d.controller.IntroController">
+
+    <ImageView fx:id="imgLogo" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../img/Intro_BioMath3D.png" />
+        </image>
+    </ImageView>
+
+    <Label fx:id="lblProgreso" text="Inicializando módulos de BioMath 3D..." textFill="#a0a5b5">
+        <font>
+            <Font name="System Bold" size="13.0" />
+        </font>
+    </Label>
+
+    <ProgressBar fx:id="barCarga" progress="0.0" prefWidth="480.0"
+                 style="-fx-accent: #316cf4; -fx-control-inner-background: #1e222b;" />
+</VBox>
