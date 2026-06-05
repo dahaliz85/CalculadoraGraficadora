@@ -5,7 +5,7 @@ module com.biomath3d {
 
     // Requerimos los módulos que usaremos para el motor y base de datos
     requires java.sql;
-    requires exp4j;
+    //requires exp4j;
 
     // 2. Exportamos el paquete raíz para que JavaFX pueda lanzar MainApp
     exports com.biomath3d;

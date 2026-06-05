@@ -30,12 +30,6 @@
         </dependency>
 
         <dependency>
-            <groupId>net.objecthunter</groupId>
-            <artifactId>exp4j</artifactId>
-            <version>0.4.8</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.42.0.0</version>
@@ -48,8 +42,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
 
     <build>
         <resources>
@@ -70,6 +62,14 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>com.biomath3d.Main</mainClass>
+
+                    <launcher>BioMath3D</launcher>
+                    <jlinkImageName>BioMath3D-App</jlinkImageName>
+                    <jlinkZipName>BioMath3D-Windows</jlinkZipName>
+
+                    <noManPages>true</noManPages>
+                    <noHeaderFiles>true</noHeaderFiles>
+                    <stripDebug>true</stripDebug>
                 </configuration>
             </plugin>
         </plugins>

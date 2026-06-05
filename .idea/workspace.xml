@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="reinicio de codigo">
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="construccion de cascaron de funciones">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioAlgebraLogaritmos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioDerivadas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioIdentidadesTrigonometricas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,20 +54,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.MainApp.executor": "Run",
-    "Application.MainLauncher.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dahaliz85/OneDrive/Documentos/UVM/4TO SEMESTRE/CALCULO VECTORIAL/Proyecto Calculadora Grafica/Codigo/CalculadoraGraficadora/src/main/resources/com/biomath3d/ui",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainLauncher.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dahaliz85/OneDrive/Documentos/UVM/4TO SEMESTRE/CALCULO VECTORIAL/Proyecto Calculadora Grafica/Codigo/CalculadoraGraficadora/src/main/resources/com/biomath3d/ui&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com\biomath3d\ui" />
@@ -184,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780035004633</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="construccion de cascaron de funciones">
+      <option name="closed" value="true" />
+      <created>1780037562543</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1780037562544</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,6 +212,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Iniciacion de Proyecto de Calculadora Graficadora" />
     <MESSAGE value="reinicio de codigo" />
-    <option name="LAST_COMMIT_MESSAGE" value="reinicio de codigo" />
+    <MESSAGE value="construccion de cascaron de funciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="construccion de cascaron de funciones" />
   </component>
 </project>
