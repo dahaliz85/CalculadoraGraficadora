@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Cambio de paquete de formulas de .form a .math">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/entity/DominioGraficacionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/entity/SimulacionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/model/IntegralDefinida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/model/Simulacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/model/Vector3D.java" afterDir="false" />
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de formularios matematicos">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/EvaluadorExpresion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/TipoToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Tokenizador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/historial_simulaciones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/historial_simulaciones.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioAlgebraLogaritmos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioDerivadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioIdentidadesTrigonometricas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioIntegrales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioMatrices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioVectores.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780679652960</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Generacion de formularios matematicos">
+      <option name="closed" value="true" />
+      <created>1780682736471</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1780682736471</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,6 +289,7 @@
     <MESSAGE value="implementacion de funcion de historial y alertas" />
     <MESSAGE value="Generacion de pantalla introductoria" />
     <MESSAGE value="Cambio de paquete de formulas de .form a .math" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio de paquete de formulas de .form a .math" />
+    <MESSAGE value="Generacion de formularios matematicos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generacion de formularios matematicos" />
   </component>
 </project>

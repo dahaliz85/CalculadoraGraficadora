@@ -1,4 +1,4 @@
-package com.biomath3d.math;
+package com.biomath3d.math.form;
 
 /**
  * Identidades trigonométricas planas, circulares, hiperbólicas, límites notables,

@@ -1,4 +1,4 @@
-package com.biomath3d.math;
+package com.biomath3d.math.form;
 
 import com.biomath3d.model.IntegralDefinida;
 

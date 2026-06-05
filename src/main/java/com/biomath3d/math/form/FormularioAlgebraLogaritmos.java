@@ -1,4 +1,4 @@
-package com.biomath3d.math;
+package com.biomath3d.math.form;
 
 /**
  * Operaciones algebraicas, leyes de exponentes, logaritmos y productos notables.

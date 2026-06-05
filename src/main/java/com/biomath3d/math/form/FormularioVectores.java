@@ -1,4 +1,4 @@
-package com.biomath3d.math;
+package com.biomath3d.math.form;
 
 /**
  * Catálogo de operaciones analíticas y numéricas con vectores en R2 y R3.
