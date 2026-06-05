@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="implementacion de funcion de historial y alertas">
-      <change afterPath="$PROJECT_DIR$/historial_simulaciones.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/IntroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/img/Intro_BioMath3D.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/IntroView.fxml" afterDir="false" />
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de pantalla introductoria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/HistorialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/HistorialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/IHistorialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/IHistorialService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/impl/HistorialServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/impl/HistorialServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioAlgebraLogaritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioDerivadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioIdentidadesTrigonometricas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioIntegrales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioMatrices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioVectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780635112505</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Generacion de pantalla introductoria">
+      <option name="closed" value="true" />
+      <created>1780638854173</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1780638854173</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,6 +265,7 @@
     <MESSAGE value="construccion de cascaron de funciones" />
     <MESSAGE value="generacion de cascaron de clases de catalogo de formulas" />
     <MESSAGE value="implementacion de funcion de historial y alertas" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacion de funcion de historial y alertas" />
+    <MESSAGE value="Generacion de pantalla introductoria" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generacion de pantalla introductoria" />
   </component>
 </project>

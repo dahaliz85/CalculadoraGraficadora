@@ -1,4 +1,4 @@
-package com.biomath3d.utils.form;
+package com.biomath3d.math;
 
 /**
  * Catálogo completo de derivadas directas, inversas, logarítmicas e hiperbólicas.

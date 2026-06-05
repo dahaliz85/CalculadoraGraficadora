@@ -1,4 +1,4 @@
-package com.biomath3d.utils.form;
+package com.biomath3d.math;
 
 /**
  * Catálogo completo de reglas analíticas de integración y aproximación por series.
