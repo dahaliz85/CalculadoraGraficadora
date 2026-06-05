@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="generacion de cascaron de clases de catalogo de formulas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/HistorialController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/repository/IHistorialRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/repository/impl/HistorialRepositoryDBImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/repository/impl/HistorialRepositoryFileImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/IHistorialService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/service/impl/HistorialServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/AlertaUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/EvaluadorExpresiones.java" afterDir="false" />
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="implementacion de funcion de historial y alertas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780628114193</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="implementacion de funcion de historial y alertas">
+      <option name="closed" value="true" />
+      <created>1780634197552</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1780634197552</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,6 +243,7 @@
     <MESSAGE value="reinicio de codigo" />
     <MESSAGE value="construccion de cascaron de funciones" />
     <MESSAGE value="generacion de cascaron de clases de catalogo de formulas" />
-    <option name="LAST_COMMIT_MESSAGE" value="generacion de cascaron de clases de catalogo de formulas" />
+    <MESSAGE value="implementacion de funcion de historial y alertas" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacion de funcion de historial y alertas" />
   </component>
 </project>

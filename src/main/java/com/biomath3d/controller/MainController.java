@@ -48,7 +48,8 @@ public class MainController {
                 "Calcular Rotacional ∇ × F",
                 "Calcular Plano Tangente y Normal"
         );
-        comboOperacion.getItems().add(0, Constants.COMBO_SELECCIONAR_OP);
+        operacionesReales.add(0, Constants.COMBO_SELECCIONAR_OP);
+        comboOperacion.setItems(operacionesReales);
         comboOperacion.setValue(Constants.COMBO_SELECCIONAR_OP);
     }
 
@@ -80,6 +81,8 @@ public class MainController {
         // Si es válida, restablecemos el color azul
         txtFuncion.setStyle("-fx-border-color: #316cf4; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
         System.out.println("Sintaxis Correcta: " + ecuacion);
+
+        historyList.getItems().add(ecuacion);
         historialController.registrarFuncionEnHistorial(comboOperacion.getValue(), ecuacion);
     }
 
