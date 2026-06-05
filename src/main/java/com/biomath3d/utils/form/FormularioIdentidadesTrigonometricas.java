@@ -126,4 +126,73 @@ public class FormularioIdentidadesTrigonometricas {
         double catetoOpuesto = Math.sqrt(u * u - a * a);
         return new double[]{catetoOpuesto, catetoAdyacente, hipotenusa};
     }
+
+    /** * Cilíndricas a Rectangulares (X)
+     * Fórmula: x = r * cos(θ)
+     */
+    public static double cilindricasARectangularesX(double r, double theta) {
+        return r * Math.cos(theta);
+    }
+
+    /** * Cilíndricas a Rectangulares (Y)
+     * Fórmula: y = r * sin(θ)
+     */
+    public static double cilindricasARectangularesY(double r, double theta) {
+        return r * Math.sin(theta);
+    }
+
+    /** * Rectangulares a Cilíndricas (r)
+     * Fórmula: r = √(x² + y²)
+     */
+    public static double rectangularesACilindricasR(double x, double y) {
+        return Math.sqrt(x * x + y * y);
+    }
+
+    /** * Rectangulares a Cilíndricas (θ)
+     * Fórmula: θ = arctan(y / x)
+     */
+    public static double rectangularesACilindricasTheta(double x, double y) {
+        return Math.atan2(y, x);
+    }
+
+    // ==========================================
+    //     COORDENADAS ESFÉRICAS (NUEVO)
+    // ==========================================
+
+    /** * Esféricas a Rectangulares (X)
+     * Fórmula: x = ρ * sin(ϕ) * cos(θ)
+     */
+    public static double esfericasARectangularesX(double rho, double theta, double phi) {
+        return rho * Math.sin(phi) * Math.cos(theta);
+    }
+
+    /** * Esféricas a Rectangulares (Y)
+     * Fórmula: y = ρ * sin(ϕ) * sin(θ)
+     */
+    public static double esfericasARectangularesY(double rho, double theta, double phi) {
+        return rho * Math.sin(phi) * Math.sin(theta);
+    }
+
+    /** * Esféricas a Rectangulares (Z)
+     * Fórmula: z = ρ * cos(ϕ)
+     */
+    public static double esfericasARectangularesZ(double rho, double phi) {
+        return rho * Math.cos(phi);
+    }
+
+    /** * Rectangulares a Esféricas (ρ)
+     * Fórmula: ρ = √(x² + y² + z²)
+     */
+    public static double rectangularesAEsfericasRho(double x, double y, double z) {
+        return Math.sqrt(x * x + y * y + z * z);
+    }
+
+    /** * Rectangulares a Esféricas (ϕ)
+     * Fórmula: ϕ = arccos(z / √(x² + y² + z²))
+     */
+    public static double rectangularesAEsfericasPhi(double x, double y, double z) {
+        double rho = rectangularesAEsfericasRho(x, y, z);
+        if (rho == 0.0) return 0.0;
+        return Math.acos(z / rho);
+    }
 }
