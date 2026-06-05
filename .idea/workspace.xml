@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de pantalla introductoria">
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Cambio de paquete de formulas de .form a .math">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/entity/DominioGraficacionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/entity/SimulacionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/model/IntegralDefinida.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/model/Simulacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/model/Vector3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioAlgebraLogaritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioDerivadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioIdentidadesTrigonometricas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioIntegrales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioMatrices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/utils/form/FormularioVectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,20 +62,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainLauncher.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dahaliz85/OneDrive/Documentos/UVM/4TO SEMESTRE/CALCULO VECTORIAL/Proyecto Calculadora Grafica/Codigo/CalculadoraGraficadora/src/main/resources/com/biomath3d/ui&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.MainApp.executor": "Run",
+    "Application.MainLauncher.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dahaliz85/OneDrive/Documentos/UVM/4TO SEMESTRE/CALCULO VECTORIAL/Proyecto Calculadora Grafica/Codigo/CalculadoraGraficadora/src/main/resources/com/biomath3d/ui",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dahaliz85\OneDrive\Documentos\UVM\4TO SEMESTRE\CALCULO VECTORIAL\Proyecto Calculadora Grafica\Codigo\CalculadoraGraficadora\src\main\resources\com\biomath3d\ui" />
@@ -244,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780638854173</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Cambio de paquete de formulas de .form a .math">
+      <option name="closed" value="true" />
+      <created>1780679652959</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1780679652960</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,6 +281,7 @@
     <MESSAGE value="generacion de cascaron de clases de catalogo de formulas" />
     <MESSAGE value="implementacion de funcion de historial y alertas" />
     <MESSAGE value="Generacion de pantalla introductoria" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generacion de pantalla introductoria" />
+    <MESSAGE value="Cambio de paquete de formulas de .form a .math" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio de paquete de formulas de .form a .math" />
   </component>
 </project>
