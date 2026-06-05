@@ -64,10 +64,8 @@ public class Utils {
         try {
             javafx.scene.control.DialogPane dialogPane = alert.getDialogPane();
             dialogPane.getStyleClass().add("mi-alerta-personalizada");
-
             // CORREGIDO: Apuntamos de forma directa a la raíz de resources usando el ClassLoader global
             java.net.URL cssURL = Thread.currentThread().getContextClassLoader().getResource("com/biomath3d/ui/styles/window.css");
-
             if (cssURL != null) {
                 dialogPane.getStylesheets().add(cssURL.toExternalForm());
             } else {
@@ -76,9 +74,28 @@ public class Utils {
         } catch (Exception e) {
             System.out.println("Error al aplicar estilo CSS a la alerta: " + e.getMessage());
         }
-
         // Este método SIEMPRE se debe ejecutar al final
         alert.showAndWait();
     }
 
+    public static void mostrarAlerta(javafx.scene.control.Alert.AlertType tipo, String titulo, String mensaje) {
+        javafx.scene.control.Alert alert = new javafx.scene.control.Alert(tipo);
+        alert.setTitle(Constants.ALERTA_TITULO_VALIDACION);
+        alert.setHeaderText(titulo);
+        alert.setContentText(mensaje);
+
+        // Mismo tuning de CSS que ya programaste con tu try-catch
+        try {
+            javafx.scene.control.DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStyleClass().add("mi-alerta-personalizada");
+            java.net.URL cssURL = Thread.currentThread().getContextClassLoader().getResource("com/biomath3d/ui/styles/window.css");
+            if (cssURL != null) {
+                dialogPane.getStylesheets().add(cssURL.toExternalForm());
+            }
+        } catch (Exception e) {
+            System.out.println("Error al aplicar estilo CSS a la alerta: " + e.getMessage());
+        }
+
+        alert.showAndWait();
+    }
 }

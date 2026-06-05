@@ -35,7 +35,8 @@
                             <content><Label styleClass="menu-section-header" text="EDITAR" /></content>
                         </CustomMenuItem>
                         <MenuItem text="Copiar Imagen al Portapapeles" onAction="#copiarAlPortapapeles" />
-                        <MenuItem text="Limpiar Historial SQLite" onAction="#limpiarHistorialBaseDatos" />
+                        <MenuItem text="Exportar Historial" onAction="#limpiarHistorialBaseDatos" />
+
 
                         <SeparatorMenuItem />
 

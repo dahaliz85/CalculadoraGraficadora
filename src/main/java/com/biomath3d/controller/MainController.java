@@ -1,6 +1,9 @@
 package com.biomath3d.controller;
 
+import com.biomath3d.service.IHistorialService;
+import com.biomath3d.utils.Constants;
 import com.biomath3d.utils.Utils;
+import com.biomath3d.utils.AlertaUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
@@ -20,6 +23,8 @@ import java.io.File;
 
 public class MainController {
 
+    private final HistorialController historialController;
+
     @FXML private MenuButton menuCuenta;
     @FXML private MenuItem menuSalir;
     @FXML private TextField txtFunc;
@@ -30,26 +35,35 @@ public class MainController {
     @FXML private ComboBox<String> comboOperacion;
     @FXML private TextField txtFuncion;
 
+    public MainController(){
+        this.historialController = new HistorialController();
+    }
+
     @FXML
     public void initialize() {
         ObservableList<String> operacionesReales = FXCollections.observableArrayList(
-                "Generar Malla Superficie 3D",       // CU-02: Renderizado de f(x,y)
-                "Calcular Gradiente ∇f",             // CU-03: Operador Gradiente (Direccional)
-                "Calcular Divergencia (Campos)",     // CU-03: Operador Divergencia
-                "Calcular Rotacional ∇ × F",         // CU-03: Operador Rotacional
-                "Calcular Plano Tangente y Normal"   // CU-03: Geometría Diferencial de la superficie
+                "Generar Malla Superficie 3D",
+                "Calcular Gradiente ∇f",
+                "Calcular Divergencia (Campos)",
+                "Calcular Rotacional ∇ × F",
+                "Calcular Plano Tangente y Normal"
         );
-        comboOperacion.setItems(operacionesReales);
-        comboOperacion.getSelectionModel().selectFirst();
+        comboOperacion.getItems().add(0, Constants.COMBO_SELECCIONAR_OP);
+        comboOperacion.setValue(Constants.COMBO_SELECCIONAR_OP);
     }
 
     @FXML
     private void procesarOperacion() {
         String operacion = comboOperacion.getValue();
-        String ecuacion = txtFuncion.getText();
+        String ecuacion = txtFuncion.getText().trim();
 
-        if (ecuacion == null || ecuacion.trim().isEmpty()) {
-            Utils.mostrarAlertaError("Entrada Vacía", "Por favor, introduce una ecuación matemática.");
+        if (comboOperacion.getValue() == null || comboOperacion.getValue().equals(Constants.COMBO_SELECCIONAR_OP)) {
+            AlertaUtils.mostrarAlerta(Alert.AlertType.WARNING, "Selección Requerida", Constants.ALERTA_ERROR_SELECCION);
+            return; // Frena el flujo por completo
+        }
+
+        if(ecuacion.isEmpty()){
+            AlertaUtils.mostrarAlerta(Alert.AlertType.WARNING, "Entrada Vacía", Constants.ALERTA_ECUACION_VACIA);
             return;
         }
 
@@ -66,6 +80,7 @@ public class MainController {
         // Si es válida, restablecemos el color azul
         txtFuncion.setStyle("-fx-border-color: #316cf4; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
         System.out.println("Sintaxis Correcta: " + ecuacion);
+        historialController.registrarFuncionEnHistorial(comboOperacion.getValue(), ecuacion);
     }
 
     // ==========================================================
