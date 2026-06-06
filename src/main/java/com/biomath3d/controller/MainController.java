@@ -24,6 +24,7 @@ public class MainController {
 
     private final HistorialController historialController;
     private final ProcessController processController;
+    private final MeshController meshController;
 
     @FXML private MenuButton menuCuenta;
     @FXML private MenuItem menuSalir;
@@ -39,6 +40,7 @@ public class MainController {
     public MainController(){
         this.processController = new ProcessController();
         this.historialController = new HistorialController();
+        this.meshController = new MeshController();
 
     }
 
@@ -54,6 +56,7 @@ public class MainController {
         operacionesReales.add(0, Constants.COMBO_SELECCIONAR_OP);
         comboOperacion.setItems(operacionesReales);
         comboOperacion.setValue(Constants.COMBO_SELECCIONAR_OP);
+        meshController.inicializarLienzo3D(centerContainer);
     }
 
     @FXML

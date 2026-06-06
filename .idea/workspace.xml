@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de funcionalidad de graficas">
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Estabilizacion de codigo sin malla">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MeshController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/historial_simulaciones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/historial_simulaciones.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MeshController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/render/MeshGenerator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780704076484</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Estabilizacion de codigo sin malla">
+      <option name="closed" value="true" />
+      <created>1780727326923</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1780727326923</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +307,7 @@
     <MESSAGE value="Generacion de formularios matematicos" />
     <MESSAGE value="Generacion de formularios matematicos y procesador de ecuaciones" />
     <MESSAGE value="Generacion de funcionalidad de graficas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generacion de funcionalidad de graficas" />
+    <MESSAGE value="Estabilizacion de codigo sin malla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Estabilizacion de codigo sin malla" />
   </component>
 </project>
