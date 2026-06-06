@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de formularios matematicos y procesador de ecuaciones">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MeshController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/ProcessController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioCalculoVectorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/DetectorVariables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/render/MeshGenerator.java" afterDir="false" />
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de funcionalidad de graficas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/historial_simulaciones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/historial_simulaciones.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/EvaluadorExpresion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/EvaluadorExpresion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Tokenizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Tokenizador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MeshController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/render/MeshGenerator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780683982961</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Generacion de funcionalidad de graficas">
+      <option name="closed" value="true" />
+      <created>1780704076484</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1780704076484</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,6 +300,7 @@
     <MESSAGE value="Cambio de paquete de formulas de .form a .math" />
     <MESSAGE value="Generacion de formularios matematicos" />
     <MESSAGE value="Generacion de formularios matematicos y procesador de ecuaciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generacion de formularios matematicos y procesador de ecuaciones" />
+    <MESSAGE value="Generacion de funcionalidad de graficas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generacion de funcionalidad de graficas" />
   </component>
 </project>

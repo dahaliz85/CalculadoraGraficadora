@@ -1,11 +1,7 @@
 package com.biomath3d.controller;
 
-import com.biomath3d.math.parser.Token;
-import com.biomath3d.render.MeshGenerator;
-import com.biomath3d.service.IHistorialService;
 import com.biomath3d.utils.Constants;
 import com.biomath3d.utils.Utils;
-import com.biomath3d.utils.AlertaUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
@@ -28,7 +24,6 @@ public class MainController {
 
     private final HistorialController historialController;
     private final ProcessController processController;
-    private final MeshController meshController;
 
     @FXML private MenuButton menuCuenta;
     @FXML private MenuItem menuSalir;
@@ -44,7 +39,7 @@ public class MainController {
     public MainController(){
         this.processController = new ProcessController();
         this.historialController = new HistorialController();
-        this.meshController = new MeshController();
+
     }
 
     @FXML
@@ -76,7 +71,7 @@ public class MainController {
         historialController.registrarFuncionEnHistorial(comboOperacion.getValue(), ecuacion);
         double constanteA = 1.0;
         processController.registrarProcesoEcuacion(comboOperacion.getValue(), ecuacion, txtResultados);
-        meshController.inicializarLienzo3D(centerContainer);
+
     }
 
     // ==========================================================
@@ -250,7 +245,6 @@ public class MainController {
             List<com.biomath3d.math.parser.Token> tokensPostfijos = com.biomath3d.math.parser.EvaluadorExpresion.convertirAPostfijo(tokensInfijos);
 
             // Refrescamos únicamente la geometría interna del grupo de rotación
-            meshController.renderizarSuperficie(tokensPostfijos, false, detector);
             System.out.println("Geometría tridimensional actualizada con éxito.");
 
         } catch (Exception e) {
