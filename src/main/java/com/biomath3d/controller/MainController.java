@@ -47,13 +47,12 @@ public class MainController {
     @FXML
     public void initialize() {
         ObservableList<String> operacionesReales = FXCollections.observableArrayList(
-                "Generar Malla Superficie 3D",
                 "Calcular Gradiente ∇f",
                 "Calcular Divergencia (Campos)",
                 "Calcular Rotacional ∇ × F",
                 "Calcular Plano Tangente y Normal"
         );
-        operacionesReales.add(0, Constants.COMBO_SELECCIONAR_OP);
+        operacionesReales.addFirst(Constants.COMBO_SELECCIONAR_OP);
         comboOperacion.setItems(operacionesReales);
         comboOperacion.setValue(Constants.COMBO_SELECCIONAR_OP);
         meshController.inicializarLienzo3D(centerContainer);
@@ -231,28 +230,7 @@ public class MainController {
 
     @FXML
     private void handleRender3D() {
-        String ecuacion = txtFuncion.getText().trim();
+        meshController.dibujarMallaLimpia();
 
-        if (ecuacion.isEmpty() || !com.biomath3d.utils.Utils.esFuncionValida(ecuacion)) {
-            txtFuncion.setStyle("-fx-border-color: #ff4a4a; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
-            return;
-        }
-
-        try {
-            txtFuncion.setStyle("-fx-border-color: #316cf4; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
-
-            com.biomath3d.math.parser.DetectorVariables detector = new com.biomath3d.math.parser.DetectorVariables();
-            detector.analizarPropuesta(ecuacion);
-
-            List<com.biomath3d.math.parser.Token> tokensInfijos = com.biomath3d.math.parser.Tokenizador.tokenizar(detector.getExpresionLimpia(), detector);
-            List<com.biomath3d.math.parser.Token> tokensPostfijos = com.biomath3d.math.parser.EvaluadorExpresion.convertirAPostfijo(tokensInfijos);
-
-            // Refrescamos únicamente la geometría interna del grupo de rotación
-            System.out.println("Geometría tridimensional actualizada con éxito.");
-
-        } catch (Exception e) {
-            System.err.println("Error al actualizar superficie 3D: " + e.getMessage());
-        }
     }
-
 }
