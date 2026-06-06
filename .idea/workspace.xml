@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de formularios matematicos">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/EvaluadorExpresion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/TipoToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Tokenizador.java" afterDir="false" />
+    <list default="true" id="1183ef7e-dabf-4cd4-bf20-8e7b4c064d61" name="Changes" comment="Generacion de formularios matematicos y procesador de ecuaciones">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MeshController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/ProcessController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioCalculoVectorial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/DetectorVariables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/render/MeshGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/historial_simulaciones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/historial_simulaciones.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioAlgebraLogaritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioAlgebraLogaritmos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioDerivadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioDerivadas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIdentidadesTrigonometricas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioIdentidadesTrigonometricas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioIntegrales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioIntegrales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioMatrices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioMatrices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/FormularioVectores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/form/FormularioVectores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/EvaluadorExpresion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/EvaluadorExpresion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Tokenizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/biomath3d/math/parser/Tokenizador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/biomath3d/ui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780682736471</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Generacion de formularios matematicos y procesador de ecuaciones">
+      <option name="closed" value="true" />
+      <created>1780683982961</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1780683982961</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +297,7 @@
     <MESSAGE value="Generacion de pantalla introductoria" />
     <MESSAGE value="Cambio de paquete de formulas de .form a .math" />
     <MESSAGE value="Generacion de formularios matematicos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generacion de formularios matematicos" />
+    <MESSAGE value="Generacion de formularios matematicos y procesador de ecuaciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generacion de formularios matematicos y procesador de ecuaciones" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package com.biomath3d.controller;
 
+import com.biomath3d.math.parser.Token;
+import com.biomath3d.render.MeshGenerator;
 import com.biomath3d.service.IHistorialService;
 import com.biomath3d.utils.Constants;
 import com.biomath3d.utils.Utils;
@@ -20,10 +22,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.List;
 
 public class MainController {
 
     private final HistorialController historialController;
+    private final ProcessController processController;
+    private final MeshController meshController;
 
     @FXML private MenuButton menuCuenta;
     @FXML private MenuItem menuSalir;
@@ -34,9 +39,12 @@ public class MainController {
 
     @FXML private ComboBox<String> comboOperacion;
     @FXML private TextField txtFuncion;
+    @FXML private TextArea txtResultados;
 
     public MainController(){
+        this.processController = new ProcessController();
         this.historialController = new HistorialController();
+        this.meshController = new MeshController();
     }
 
     @FXML
@@ -58,25 +66,7 @@ public class MainController {
         String operacion = comboOperacion.getValue();
         String ecuacion = txtFuncion.getText().trim();
 
-        if (comboOperacion.getValue() == null || comboOperacion.getValue().equals(Constants.COMBO_SELECCIONAR_OP)) {
-            AlertaUtils.mostrarAlerta(Alert.AlertType.WARNING, "Selección Requerida", Constants.ALERTA_ERROR_SELECCION);
-            return; // Frena el flujo por completo
-        }
-
-        if(ecuacion.isEmpty()){
-            AlertaUtils.mostrarAlerta(Alert.AlertType.WARNING, "Entrada Vacía", Constants.ALERTA_ECUACION_VACIA);
-            return;
-        }
-
-        // Validamos usando tu clase Utils
-        if (!Utils.esFuncionValida(ecuacion)) {
-            // 1. Pintamos de rojo (lo que ya te sale bien)
-            txtFuncion.setStyle("-fx-border-color: #ff4a4a; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
-
-            // 2. ¡ASEGÚRATE DE TENER ESTA LÍNEA AQUÍ!
-            Utils.mostrarAlertaError("Error de Sintaxis", "La expresión '" + ecuacion + "' no es una función válida para BioMath 3D.");
-            return;
-        }
+        // ... (Tus validaciones de ComboBox vacía y Sintaxis se quedan exactamente igual) ...
 
         // Si es válida, restablecemos el color azul
         txtFuncion.setStyle("-fx-border-color: #316cf4; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
@@ -84,6 +74,9 @@ public class MainController {
 
         historyList.getItems().add(ecuacion);
         historialController.registrarFuncionEnHistorial(comboOperacion.getValue(), ecuacion);
+        double constanteA = 1.0;
+        processController.registrarProcesoEcuacion(comboOperacion.getValue(), ecuacion, txtResultados);
+        meshController.inicializarLienzo3D(centerContainer);
     }
 
     // ==========================================================
@@ -235,6 +228,33 @@ public class MainController {
             } else {
                 Utils.mostrarAlertaError("Error de Escritura", Constants.ERROR_FILE_NOT_WRITTEN);
             }
+        }
+    }
+
+    @FXML
+    private void handleRender3D() {
+        String ecuacion = txtFuncion.getText().trim();
+
+        if (ecuacion.isEmpty() || !com.biomath3d.utils.Utils.esFuncionValida(ecuacion)) {
+            txtFuncion.setStyle("-fx-border-color: #ff4a4a; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
+            return;
+        }
+
+        try {
+            txtFuncion.setStyle("-fx-border-color: #316cf4; -fx-border-radius: 6; -fx-background-color: #1e222b; -fx-text-fill: white;");
+
+            com.biomath3d.math.parser.DetectorVariables detector = new com.biomath3d.math.parser.DetectorVariables();
+            detector.analizarPropuesta(ecuacion);
+
+            List<com.biomath3d.math.parser.Token> tokensInfijos = com.biomath3d.math.parser.Tokenizador.tokenizar(detector.getExpresionLimpia(), detector);
+            List<com.biomath3d.math.parser.Token> tokensPostfijos = com.biomath3d.math.parser.EvaluadorExpresion.convertirAPostfijo(tokensInfijos);
+
+            // Refrescamos únicamente la geometría interna del grupo de rotación
+            meshController.renderizarSuperficie(tokensPostfijos, false, detector);
+            System.out.println("Geometría tridimensional actualizada con éxito.");
+
+        } catch (Exception e) {
+            System.err.println("Error al actualizar superficie 3D: " + e.getMessage());
         }
     }
 

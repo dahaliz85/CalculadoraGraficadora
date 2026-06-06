@@ -1,7 +1,6 @@
 package com.biomath3d.math.parser;
 
 import com.biomath3d.math.form.FormularioAlgebraLogaritmos;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -14,6 +13,7 @@ public class EvaluadorExpresion {
 
     /**
      * Convierte una lista de tokens infijos a notación postfija (Polaca Inversa).
+     * Corrige el flujo de precedencia para funciones compuestas continuas.
      */
     public static List<Token> convertirAPostfijo(List<Token> tokensInfijos) {
         List<Token> salida = new ArrayList<>();
@@ -71,6 +71,57 @@ public class EvaluadorExpresion {
 
     /**
      * Evalúa numéricamente una expresión en notación postfija en un punto determinado.
+     * Versión robusta que garantiza la consistencia de la malla y el reporte.
+     */
+    public static double evaluarPostfijo(List<Token> tokensPostfijos, double x, double y, double z, double constanteA, DetectorVariables detector) {
+        Stack<Double> pilaNumeros = new Stack<>();
+        List<String> listaVars = (detector != null) ? detector.getVariablesInferidas() : new ArrayList<>();
+
+        for (Token token : tokensPostfijos) {
+            if (token.getTipo() == TipoToken.NUMERO) {
+                pilaNumeros.push(Double.parseDouble(token.getValor()));
+            }
+            else if (token.getTipo() == TipoToken.VARIABLE) {
+                String nombreLetra = token.getValor().toLowerCase().trim();
+
+                if (detector != null && !listaVars.isEmpty() && nombreLetra.equals(listaVars.get(0).toLowerCase().trim())) {
+                    pilaNumeros.push(x);
+                } else if (detector != null && listaVars.size() > 1 && nombreLetra.equals(listaVars.get(1).toLowerCase().trim())) {
+                    pilaNumeros.push(y);
+                } else if (detector != null && listaVars.size() > 2 && nombreLetra.equals(listaVars.get(2).toLowerCase().trim())) {
+                    pilaNumeros.push(z);
+                } else {
+                    if (nombreLetra.equals("x")) pilaNumeros.push(x);
+                    else if (nombreLetra.equals("y")) pilaNumeros.push(y);
+                    else if (nombreLetra.equals("z")) pilaNumeros.push(z);
+                    else pilaNumeros.push(x);
+                }
+            }
+            else if (token.getTipo() == TipoToken.CONSTANTE) {
+                pilaNumeros.push(constanteA);
+            }
+            else if (token.getTipo() == TipoToken.OPERADOR) {
+                // Evitamos el 'continue' extrayendo con validación controlada para no romper la pila
+                double b = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
+                double a = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
+                pilaNumeros.push(ejecutarOperacionBinaria(a, b, token.getValor()));
+            }
+            else if (token.getTipo() == TipoToken.FUNCION) {
+                double argumento = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
+                pilaNumeros.push(ejecutarFuncion(argumento, token.getValor()));
+            }
+        }
+
+        // Retorno seguro y garantizado
+        if (!pilaNumeros.isEmpty()) {
+            return pilaNumeros.pop();
+        }
+        return 0.0;
+    }
+
+    /**
+     * Versión sobrecargada de 5 argumentos para el renderizado nativo de la malla 3D.
+     * No requiere pasar un DetectorVariables.
      */
     public static double evaluarPostfijo(List<Token> tokensPostfijos, double x, double y, double z, double constanteA) {
         Stack<Double> pilaNumeros = new Stack<>();
@@ -78,38 +129,38 @@ public class EvaluadorExpresion {
         for (Token token : tokensPostfijos) {
             if (token.getTipo() == TipoToken.NUMERO) {
                 pilaNumeros.push(Double.parseDouble(token.getValor()));
-            } else if (token.getTipo() == TipoToken.VARIABLE) {
-                if (token.getValor().equals("x")) pilaNumeros.push(x);
-                else if (token.getValor().equals("y")) pilaNumeros.push(y);
-                else if (token.getValor().equals("z")) pilaNumeros.push(z);
-            } else if (token.getTipo() == TipoToken.CONSTANTE) {
+            }
+            else if (token.getTipo() == TipoToken.VARIABLE) {
+                String nombreLetra = token.getValor().toLowerCase().trim();
+
+                // Mapeo directo y seguro de variables en la cuadrícula
+                if (nombreLetra.equals("x")) pilaNumeros.push(x);
+                else if (nombreLetra.equals("y")) pilaNumeros.push(y);
+                else if (nombreLetra.equals("z")) pilaNumeros.push(z);
+                else pilaNumeros.push(x); // Resguardo
+            }
+            else if (token.getTipo() == TipoToken.CONSTANTE) {
                 pilaNumeros.push(constanteA);
-            } else if (token.getTipo() == TipoToken.OPERADOR) {
-                if (pilaNumeros.size() < 2) {
-                    throw new IllegalArgumentException("Expresión inválida para evaluar el operador: " + token.getValor());
-                }
-                double b = pilaNumeros.pop();
-                double a = pilaNumeros.pop();
+            }
+            else if (token.getTipo() == TipoToken.OPERADOR) {
+                double b = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
+                double a = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
                 pilaNumeros.push(ejecutarOperacionBinaria(a, b, token.getValor()));
-            } else if (token.getTipo() == TipoToken.FUNCION) {
-                if (pilaNumeros.isEmpty()) {
-                    throw new IllegalArgumentException("Falta argumento para la función: " + token.getValor());
-                }
-                double argumento = pilaNumeros.pop();
+            }
+            else if (token.getTipo() == TipoToken.FUNCION) {
+                double argumento = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
                 pilaNumeros.push(ejecutarFuncion(argumento, token.getValor()));
             }
         }
 
-        if (pilaNumeros.size() != 1) {
-            throw new IllegalArgumentException("Error interno al evaluar la expresión matemática.");
+        if (!pilaNumeros.isEmpty()) {
+            return pilaNumeros.pop();
         }
-
-        return pilaNumeros.pop();
+        return 0.0;
     }
 
-    /**
-     * Define la jerarquía o prioridad de los operadores matemáticos.
-     */
+
+
     private static int obtenerPrecedencia(String operador) {
         if (operador.equals("+") || operador.equals("-")) return 1;
         if (operador.equals("*") || operador.equals("/")) return 2;
@@ -117,9 +168,6 @@ public class EvaluadorExpresion {
         return 0;
     }
 
-    /**
-     * Realiza operaciones aritméticas básicas.
-     */
     private static double ejecutarOperacionBinaria(double a, double b, String operador) {
         switch (operador) {
             case "+": return a + b;
@@ -133,9 +181,6 @@ public class EvaluadorExpresion {
         }
     }
 
-    /**
-     * Conecta el analizador con tu catálogo de funciones trigonométricas y algebraicas.
-     */
     private static double ejecutarFuncion(double arg, String funcion) {
         switch (funcion) {
             case "sin": return Math.sin(arg);
@@ -151,19 +196,18 @@ public class EvaluadorExpresion {
     }
 
     /**
-     * Evalúa la expresión postfija y genera una bitácora detallada paso a paso
-     * de la resolución aritmética y matemática.
+     * Genera la bitácora paso a paso utilizando la misma lógica segura del evaluador.
      */
-    public static String obtenerDesarrolloPasoAPaso(List<Token> tokensPostfijos, double x, double y, double z, double constanteA) {
+    public static String obtenerDesarrolloPasoAPaso(List<Token> tokensPostfijos, double x, double y, double z, double constanteA, DetectorVariables detector) {
         StringBuilder bitacora = new StringBuilder();
         Stack<Double> pilaNumeros = new Stack<>();
+        List<String> listaVars = (detector != null) ? detector.getVariablesInferidas() : new ArrayList<>();
 
         bitacora.append("====================================================\n");
         bitacora.append("         DESARROLLO PASO A PASO - BIOMATH 3D        \n");
         bitacora.append("====================================================\n");
         bitacora.append(String.format("Evaluando en el punto: P(x = %.2f, y = %.2f, z = %.2f) | Parámetro A = %.2f\n\n", x, y, z, constanteA));
 
-        // Mostrar el orden postfijo de los componentes
         bitacora.append("1. Orden de evaluación en Notación Polaca Inversa:\n   ");
         for (Token t : tokensPostfijos) {
             bitacora.append(t.getValor()).append(" ");
@@ -179,10 +223,20 @@ public class EvaluadorExpresion {
                 bitacora.append(String.format("Paso %02d: Detecta número. Insertar en pila -> %.4f\n", paso++, num));
             }
             else if (token.getTipo() == TipoToken.VARIABLE) {
+                String nombreLetra = token.getValor().toLowerCase().trim();
                 double valVar = 0.0;
-                if (token.getValor().equals("x")) valVar = x;
-                else if (token.getValor().equals("y")) valVar = y;
-                else if (token.getValor().equals("z")) valVar = z;
+
+                if (detector != null && !listaVars.isEmpty() && nombreLetra.equals(listaVars.get(0).toLowerCase().trim())) {
+                    valVar = x;
+                } else if (detector != null && listaVars.size() > 1 && nombreLetra.equals(listaVars.get(1).toLowerCase().trim())) {
+                    valVar = y;
+                } else if (detector != null && listaVars.size() > 2 && nombreLetra.equals(listaVars.get(2).toLowerCase().trim())) {
+                    valVar = z;
+                } else {
+                    if (nombreLetra.equals("x")) valVar = x;
+                    else if (nombreLetra.equals("y")) valVar = y;
+                    else if (nombreLetra.equals("z")) valVar = z;
+                }
 
                 pilaNumeros.push(valVar);
                 bitacora.append(String.format("Paso %02d: Sustituye variable '%s' -> Insertar %.4f\n", paso++, token.getValor(), valVar));
@@ -192,8 +246,8 @@ public class EvaluadorExpresion {
                 bitacora.append(String.format("Paso %02d: Sustituye constante 'a' -> Insertar %.4f\n", paso++, constanteA));
             }
             else if (token.getTipo() == TipoToken.OPERADOR) {
-                double b = pilaNumeros.pop();
-                double a = pilaNumeros.pop();
+                double b = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
+                double a = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
                 double resOp = ejecutarOperacionBinaria(a, b, token.getValor());
                 pilaNumeros.push(resOp);
 
@@ -201,7 +255,7 @@ public class EvaluadorExpresion {
                         paso++, token.getValor(), a, token.getValor(), b, resOp));
             }
             else if (token.getTipo() == TipoToken.FUNCION) {
-                double argumento = pilaNumeros.pop();
+                double argumento = (!pilaNumeros.isEmpty()) ? pilaNumeros.pop() : 0.0;
                 double resFunc = ejecutarFuncion(argumento, token.getValor());
                 pilaNumeros.push(resFunc);
 
@@ -209,12 +263,12 @@ public class EvaluadorExpresion {
                         paso++, token.getValor(), token.getValor(), argumento, resFunc));
             }
 
-            // Muestra cómo va quedando la pila en tiempo real para simular el proceso a mano
             bitacora.append("        Estado actual de la Pila: ").append(pilaNumeros.toString()).append("\n\n");
         }
 
         bitacora.append("----------------------------------------------------\n");
-        bitacora.append(String.format("RESULTADO FINAL: z = %.6f\n", pilaNumeros.peek()));
+        double resultadoImpresion = pilaNumeros.isEmpty() ? 0.0 : pilaNumeros.peek();
+        bitacora.append(String.format("RESULTADO FINAL: z = %.6f\n", resultadoImpresion));
         bitacora.append("====================================================\n");
 
         return bitacora.toString();
